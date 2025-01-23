@@ -7,8 +7,6 @@ $if(title)$
 $endif$
 $if(logo)$
   logo: "$logo$",
-$elseif(brand.logo)$
-  font: ("$brand.logo$",),
 $endif$
 $if(sender)$
   sender: (
@@ -21,8 +19,7 @@ $if(sender)$
       country: "$sender.address.country$"
     ),
     email: "$sender.email$",
-    registration: "$sender.registration$",
-    vat: "$sender.vat$",
+    nif: "$sender.nif$",
     exempted: "$sender.exempted$"
   ),
 $endif$
@@ -41,11 +38,7 @@ $endif$
 $if(invoice)$
   invoice: (
     number: "$invoice.number$",
-    issued: "$invoice.issued$",
-    due: "$invoice.due$",
-    reference: "$invoice.reference$",
-    fee: "$invoice.fee$",
-    penalty: "$invoice.penalty$"
+    issued: "$invoice.issued$"
   ),
 $endif$
 $if(bank)$
@@ -63,8 +56,8 @@ $endif$
 $if(margin)$
   margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
 $endif$
-$if(papersize)$
-  paper: "$papersize$",
+$if(paper)$
+  paper: "$paper$",
 $endif$
 $if(mainfont)$
   font: ("$mainfont$",),
